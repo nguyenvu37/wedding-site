@@ -110,6 +110,52 @@ const vi = {
   album: {
     title: "Album Hình Cưới",
   },
+  // Events
+  events: {
+    title: "Sự Kiện Cưới",
+    brideCeremony: "LỄ CƯỚI NHÀ NỮ",
+    brideParty: "TIỆC CƯỚI NHÀ NỮ",
+    groomCeremony: "LỄ CƯỚI NHÀ NAM",
+    groomParty: "TIỆC CƯỚI NHÀ NAM",
+    map: "Xem bản đồ",
+    dressCode: "Dress Code",
+    eventsList: [
+      {
+        id: "bride-ceremony",
+        title: "LỄ CƯỚI NHÀ NỮ",
+        time: "07:30 10/02/2023",
+        location: "TƯ GIA NHÀ NỮ - Phước Ninh, Hải Châu, Đà Nẵng",
+        image: "/images/album/image4n2a4087.jpg",
+        mapUrl: "#",
+      },
+      {
+        id: "bride-party",
+        title: "TIỆC CƯỚI NHÀ NỮ",
+        time: "11:30 10/02/2023",
+        location: "Nhà Hàng Hoa Cau - Phước Ninh, Hải Châu, Đà Nẵng",
+        image: "/images/album/image4n2a4109.jpg",
+        dressCode: ["#e8b6b6", "#ffffff", "#503e4d"],
+        mapUrl: "#",
+      },
+      {
+        id: "groom-ceremony",
+        title: "LỄ CƯỚI NHÀ NAM",
+        time: "08:00 11/02/2023",
+        location: "TƯ GIA NHÀ NAM - Quận 1, TP. HCM",
+        image: "/images/album/image4n2a4141.jpg",
+        mapUrl: "#",
+      },
+      {
+        id: "groom-party",
+        title: "TIỆC CƯỚI NHÀ NAM",
+        time: "17:30 11/02/2023",
+        location: "Nhà Hàng Adora - Quận 7, TP. HCM",
+        image: "/images/album/image4n2a4156ok.jpg",
+        dressCode: ["#1a1f33", "#c5a47e", "#ffffff"],
+        mapUrl: "#",
+      },
+    ]
+  },
   // Wedding Gift
   weddingGift: {
     title: "Mừng Cưới",

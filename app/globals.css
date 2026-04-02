@@ -257,3 +257,43 @@ body {
   font-family: var(--font-heading);
   font-style: italic;
 }
+
+/* ===== Album Gallery ===== */
+@keyframes album-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.album-card {
+  animation: album-card-in 0.6s ease-out both;
+}
+
+@keyframes lightbox-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes lightbox-image-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lightbox-backdrop {
+  animation: lightbox-backdrop-in 0.3s ease-out;
+}
+
+.lightbox-image {
+  animation: lightbox-image-in 0.4s ease-out;
+}

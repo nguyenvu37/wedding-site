@@ -100,8 +100,55 @@ const en: Translations = {
       },
     ],
   },
+  // Album
   album: {
-    title: "Wedding Album",
+    title: "Wedding Gallery",
+  },
+  // Events
+  events: {
+    title: "Wedding Events",
+    brideCeremony: "BRIDE'S CEREMONY",
+    brideParty: "BRIDE'S RECEPTION",
+    groomCeremony: "GROOM'S CEREMONY",
+    groomParty: "GROOM'S RECEPTION",
+    map: "View map",
+    dressCode: "Dress Code",
+    eventsList: [
+      {
+        id: "bride-ceremony",
+        title: "BRIDE'S CEREMONY",
+        time: "07:30 10/02/2023",
+        location: "Bride's Home - Hai Chau, Da Nang",
+        image: "/images/album/image4n2a4087.jpg",
+        mapUrl: "#",
+      },
+      {
+        id: "bride-party",
+        title: "BRIDE'S RECEPTION",
+        time: "11:30 10/02/2023",
+        location: "Hoa Cau Restaurant - Hai Chau, Da Nang",
+        image: "/images/album/image4n2a4109.jpg",
+        dressCode: ["#e8b6b6", "#ffffff", "#503e4d"],
+        mapUrl: "#",
+      },
+      {
+        id: "groom-ceremony",
+        title: "GROOM'S CEREMONY",
+        time: "08:00 11/02/2023",
+        location: "Groom's Home - District 1, HCMC",
+        image: "/images/album/image4n2a4141.jpg",
+        mapUrl: "#",
+      },
+      {
+        id: "groom-party",
+        title: "GROOM'S RECEPTION",
+        time: "17:30 11/02/2023",
+        location: "Adora Restaurant - District 7, HCMC",
+        image: "/images/album/image4n2a4156ok.jpg",
+        dressCode: ["#1a1f33", "#c5a47e", "#ffffff"],
+        mapUrl: "#",
+      },
+    ]
   },
   weddingGift: {
     title: "Wedding Gift",

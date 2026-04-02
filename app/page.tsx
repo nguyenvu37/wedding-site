@@ -8,6 +8,7 @@ import CountdownSection from "@/components/sections/countdown-section";
 import CoupleSection from "@/components/sections/couple-section";
 import ActionButtonsSection from "@/components/sections/action-buttons-section";
 import LoveStorySection from "@/components/sections/love-story-section";
+import EventsSection from "@/components/sections/events-section";
 import AlbumSection from "@/components/sections/album-section";
 import GuestbookSection from "@/components/sections/guestbook-section";
 import RSVPModal from "@/components/sections/rsvp-modal";
@@ -38,6 +39,7 @@ export default function HomePage() {
           onWeddingGift={() => setGiftOpen(true)}
         />
         <LoveStorySection />
+        <EventsSection />
         <AlbumSection />
         <GuestbookSection />
       </main>

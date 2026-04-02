@@ -100,8 +100,55 @@ const ja: Translations = {
       },
     ],
   },
+  // Album
   album: {
-    title: "ウェディングアルバム",
+    title: "ウェディングギャラリー",
+  },
+  // Events
+  events: {
+    title: "ウェディングイベント",
+    brideCeremony: "新婦の結婚式",
+    brideParty: "新婦の披露宴",
+    groomCeremony: "新郎の結婚式",
+    groomParty: "新郎の披露宴",
+    map: "地図を見る",
+    dressCode: "ドレスコード",
+    eventsList: [
+      {
+        id: "bride-ceremony",
+        title: "新婦の結婚式",
+        time: "07:30 10/02/2023",
+        location: "新婦の家 - ダナン市ハイチャウ区",
+        image: "/images/album/image4n2a4087.jpg",
+        mapUrl: "#",
+      },
+      {
+        id: "bride-party",
+        title: "新婦の披露宴",
+        time: "11:30 10/02/2023",
+        location: "ホアカウレストラン - ダナン市ハイチャウ区",
+        image: "/images/album/image4n2a4109.jpg",
+        dressCode: ["#e8b6b6", "#ffffff", "#503e4d"],
+        mapUrl: "#",
+      },
+      {
+        id: "groom-ceremony",
+        title: "新郎の結婚式",
+        time: "08:00 11/02/2023",
+        location: "新郎の家 - ホーチミン市1区",
+        image: "/images/album/image4n2a4141.jpg",
+        mapUrl: "#",
+      },
+      {
+        id: "groom-party",
+        title: "新郎の披露宴",
+        time: "17:30 11/02/2023",
+        location: "アドラレストラン - ホーチミン市7区",
+        image: "/images/album/image4n2a4156ok.jpg",
+        dressCode: ["#1a1f33", "#c5a47e", "#ffffff"],
+        mapUrl: "#",
+      },
+    ]
   },
   weddingGift: {
     title: "ご祝儀",
