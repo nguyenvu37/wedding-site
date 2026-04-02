@@ -16,9 +16,28 @@
   --muted-foreground: #6b7280;
   --border: #d4dce6;
   --ring: #4a6b8a;
+  
+  /* Additional Shadcn UI elements */
+  --card: #ffffff;
+  --card-foreground: #2c3e50;
+  --popover: #ffffff;
+  --popover-foreground: #2c3e50;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  
+  /* Wedding Premium Colors */
+  --champagne: #f7e7ce;
+  --champagne-foreground: #5c4d32;
+  --gold: #d4af37;
+  --gold-foreground: #ffffff;
+  --sage: #25ae87;
+  --sage-foreground: #2c3e50;
+  --blush: #f4c4c4;
+  --blush-foreground: #4a2b2b;
+  
   --radius: 0.5rem;
-  --font-heading: var(--font-playfair), "Playfair Display", serif;
-  --font-body: var(--font-inter), "Inter", sans-serif;
+  --font-heading: var(--font-great-vibes), "Great Vibes", cursive;
+  --font-body: var(--font-quicksand), "Quicksand", sans-serif;
 }
 
 /* ===== Tailwind v4 Theme ===== */
@@ -37,6 +56,20 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-champagne: var(--champagne);
+  --color-champagne-foreground: var(--champagne-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-sage: var(--sage);
+  --color-sage-foreground: var(--sage-foreground);
+  --color-blush: var(--blush);
+  --color-blush-foreground: var(--blush-foreground);
   --font-sans: var(--font-body);
   --font-serif: var(--font-heading);
 }

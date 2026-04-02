@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLocale } from "@/lib/i18n/locale-context";
 
 export default function CoupleSection() {
@@ -13,10 +14,14 @@ export default function CoupleSection() {
           <div className="flex flex-col items-center text-center flex-1 max-w-sm">
             {/* Photo frame */}
             <div className="couple-frame w-48 h-48 md:w-56 md:h-56 mb-6">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center overflow-hidden">
-                <span className="text-gray-400 text-xs font-medium">
-                  {t.couple.groom}
-                </span>
+              <div className="w-full h-full rounded-full overflow-hidden">
+                <Image
+                  src="/images/couple/groom.png"
+                  alt={t.couple.groom}
+                  width={224}
+                  height={224}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
@@ -36,12 +41,12 @@ export default function CoupleSection() {
             </p>
 
             {/* Bio */}
-            <p className="mt-4 text-sm text-foreground/60 leading-relaxed max-w-xs italic">
+            {/* <p className="mt-4 text-sm text-foreground/60 leading-relaxed max-w-xs italic">
               &ldquo;{t.couple.groomBio}&rdquo;
-            </p>
+            </p> */}
 
             {/* Social links */}
-            <div className="flex gap-3 mt-4">
+            {/* <div className="flex gap-3 mt-4">
               {["facebook", "twitter", "instagram"].map((social) => (
                 <a
                   key={social}
@@ -50,34 +55,67 @@ export default function CoupleSection() {
                   aria-label={social}
                 >
                   {social === "facebook" && (
-                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                    <svg
+                      className="w-3.5 h-3.5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                     </svg>
                   )}
                   {social === "twitter" && (
-                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                    <svg
+                      className="w-3.5 h-3.5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
                     </svg>
                   )}
                   {social === "instagram" && (
-                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" strokeWidth="2"/>
-                      <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" strokeWidth="2"/>
-                      <circle cx="17.5" cy="6.5" r="1.5"/>
+                    <svg
+                      className="w-3.5 h-3.5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <rect
+                        x="2"
+                        y="2"
+                        width="20"
+                        height="20"
+                        rx="5"
+                        ry="5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      />
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      />
+                      <circle cx="17.5" cy="6.5" r="1.5" />
                     </svg>
                   )}
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Center couple photo */}
           <div className="flex-shrink-0 order-first lg:order-none">
             <div className="oval-frame w-64 h-80 md:w-72 md:h-96">
-              <div className="w-full h-full rounded-[50%] bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center overflow-hidden">
-                <span className="text-gray-400 text-xs font-medium text-center px-4">
-                  COUPLE PHOTO
-                </span>
+              <div className="w-full h-full rounded-[50%] overflow-hidden">
+                <Image
+                  src="/images/couple/image4n2a4168.jpg"
+                  alt="Couple photo"
+                  width={288}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -86,10 +124,14 @@ export default function CoupleSection() {
           <div className="flex flex-col items-center text-center flex-1 max-w-sm">
             {/* Photo frame */}
             <div className="couple-frame w-48 h-48 md:w-56 md:h-56 mb-6">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center overflow-hidden">
-                <span className="text-gray-400 text-xs font-medium">
-                  {t.couple.bride}
-                </span>
+              <div className="w-full h-full rounded-full overflow-hidden">
+                <Image
+                  src="/images/couple/bride.jpeg"
+                  alt={t.couple.bride}
+                  width={224}
+                  height={224}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
@@ -109,12 +151,12 @@ export default function CoupleSection() {
             </p>
 
             {/* Bio */}
-            <p className="mt-4 text-sm text-foreground/60 leading-relaxed max-w-xs italic">
+            {/* <p className="mt-4 text-sm text-foreground/60 leading-relaxed max-w-xs italic">
               &ldquo;{t.couple.brideBio}&rdquo;
-            </p>
+            </p> */}
 
             {/* Social links */}
-            <div className="flex gap-3 mt-4">
+            {/* <div className="flex gap-3 mt-4">
               {["facebook", "twitter", "instagram"].map((social) => (
                 <a
                   key={social}
@@ -123,25 +165,54 @@ export default function CoupleSection() {
                   aria-label={social}
                 >
                   {social === "facebook" && (
-                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                    <svg
+                      className="w-3.5 h-3.5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                     </svg>
                   )}
                   {social === "twitter" && (
-                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                    <svg
+                      className="w-3.5 h-3.5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
                     </svg>
                   )}
                   {social === "instagram" && (
-                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" strokeWidth="2"/>
-                      <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" strokeWidth="2"/>
-                      <circle cx="17.5" cy="6.5" r="1.5"/>
+                    <svg
+                      className="w-3.5 h-3.5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <rect
+                        x="2"
+                        y="2"
+                        width="20"
+                        height="20"
+                        rx="5"
+                        ry="5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      />
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      />
+                      <circle cx="17.5" cy="6.5" r="1.5" />
                     </svg>
                   )}
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

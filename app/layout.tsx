@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Great_Vibes, Quicksand } from "next/font/google";
+import { BackgroundAudio } from "@/components/layout/background-audio";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin", "vietnamese"],
+const greatVibes = Great_Vibes({
+  variable: "--font-great-vibes",
+  weight: "400",
+  subsets: ["latin"],
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const quicksand = Quicksand({
+  variable: "--font-quicksand",
   subsets: ["latin", "vietnamese"],
   display: "swap",
 });
@@ -18,6 +20,9 @@ export const metadata: Metadata = {
   title: "Wedding Anh Vũ & Cẩm Hà",
   description:
     "Chúng tôi trân trọng kính mời bạn đến chung vui trong ngày trọng đại của chúng tôi.",
+  icons: {
+    icon: "/wedding.png",
+  },
   openGraph: {
     title: "Wedding Anh Vũ & Cẩm Hà",
     description: "Thiệp mời đám cưới online — We're Getting Married!",
@@ -35,10 +40,11 @@ export default function RootLayout({
   return (
     <html
       lang="vi"
-      className={`${playfair.variable} ${inter.variable} scroll-smooth`}
+      className={`${greatVibes.variable} ${quicksand.variable} scroll-smooth`}
     >
       <body className="min-h-screen bg-background text-foreground font-sans antialiased">
         {children}
+        <BackgroundAudio />
       </body>
     </html>
   );

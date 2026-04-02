@@ -4,6 +4,7 @@ import { useLocale } from "@/lib/i18n/locale-context";
 import LanguageSwitcher from "@/components/common/language-switcher";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const NAV_KEYS = [
   { key: "home" as const, href: "#home" },
@@ -30,7 +31,7 @@ export default function Header() {
         "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
         scrolled
           ? "bg-white/95 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
+          : "bg-[#ffffffeb]"
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
@@ -38,11 +39,17 @@ export default function Header() {
         <a
           href="#home"
           className={cn(
-            "font-serif text-xl font-semibold tracking-wide transition-colors",
+            "font-serif text-xl font-semibold tracking-wide transition-colors flex items-center gap-1.5",
             scrolled ? "text-primary" : "text-white"
           )}
         >
-          V <span className="text-accent">♥</span> H
+          <Image 
+            src="/wedding.png" 
+            alt="Wedding icon" 
+            width={36} 
+            height={36} 
+            className="object-contain"
+          />
         </a>
 
         {/* Navigation */}
@@ -52,8 +59,8 @@ export default function Header() {
               key={key}
               href={href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-accent",
-                scrolled ? "text-foreground/70" : "text-white/90"
+                "text-md font-medium transition-colors hover:text-sage/80",
+                scrolled ? "text-foreground/70" : "text-ring/90"
               )}
             >
               {t.nav[key]}

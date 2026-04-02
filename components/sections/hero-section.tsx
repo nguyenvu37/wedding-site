@@ -1,10 +1,15 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { useLocale } from "@/lib/i18n/locale-context";
 import { formatDate } from "@/lib/utils";
 
-const SLIDE_COUNT = 3;
+const HERO_IMAGES = [
+  "/images/hero/image4n2a3951.webp",
+  "/images/hero/image4n2a4426.webp",
+  "/images/hero/image4n2a4772.webp",
+];
 
 export default function HeroSection() {
   const { t, locale } = useLocale();
@@ -12,48 +17,43 @@ export default function HeroSection() {
   const weddingDate = process.env.NEXT_PUBLIC_WEDDING_DATE ?? "2026/04/30";
 
   const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % SLIDE_COUNT);
+    setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
   }, []);
 
   const prevSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev - 1 + SLIDE_COUNT) % SLIDE_COUNT);
+    setCurrentSlide(
+      (prev) => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length,
+    );
   }, []);
 
   // Auto-advance slides
   useEffect(() => {
-    const timer = setInterval(nextSlide, 5000);
+    const timer = setInterval(nextSlide, 7000);
     return () => clearInterval(timer);
   }, [nextSlide]);
 
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">
-      {/* Slide backgrounds — placeholder gradient backgrounds */}
-      {Array.from({ length: SLIDE_COUNT }).map((_, i) => (
+      {/* Slide backgrounds */}
+      {HERO_IMAGES.map((src, i) => (
         <div
           key={i}
           className={`absolute inset-0 transition-opacity duration-1000 ${
             currentSlide === i ? "opacity-100" : "opacity-0"
           }`}
-          style={{
-            background:
-              i === 0
-                ? "linear-gradient(135deg, #667eea33 0%, #764ba233 100%), #8090a0"
-                : i === 1
-                  ? "linear-gradient(135deg, #f5af1933 0%, #f1281933 100%), #9a8070"
-                  : "linear-gradient(135deg, #a18cd133 0%, #fbc2eb33 100%), #7a8a7a",
-          }}
         >
-          {/* Placeholder text for where real images will go */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-white/20 text-lg font-medium tracking-wider">
-              BANNER IMAGE {i + 1}
-            </span>
-          </div>
+          <Image
+            src={src}
+            alt={`Wedding Image ${i + 1}`}
+            fill
+            className="object-cover object-[50%_40%]"
+            priority={i === 0}
+          />
         </div>
       ))}
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/30" />
+      {/* Dark overlay để làm chìm ảnh, tăng focus cho chữ */}
+      <div className="absolute inset-0 bg-black/40 z-0" />
 
       {/* Decorative particles */}
       <div className="absolute inset-0 pointer-events-none">
@@ -94,14 +94,14 @@ export default function HeroSection() {
       </svg>
 
       {/* Center content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-        {/* Decorative frame */}
-        <div className="relative border border-white/30 px-8 py-10 md:px-20 md:py-14 max-w-xl">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 z-20">
+        {/* Decorative frame overlay */}
+        <div className="relative backdrop-blur-[2px] px-8 py-10 md:px-20 md:py-14 max-w-xxl drop-shadow-xl rounded-sm transform translate-y-80">
           {/* Corner decorations */}
-          <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-white/60" />
+          {/* <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-white/60" />
           <div className="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-white/60" />
           <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-white/60" />
-          <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-white/60" />
+          <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-white/60" /> */}
 
           {/* Names */}
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl italic tracking-wide leading-tight">
@@ -123,26 +123,42 @@ export default function HeroSection() {
       {/* Navigation arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-white/40 flex items-center justify-center text-white/70 hover:bg-white/10 hover:text-white transition-all"
+        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-white/40 flex items-center justify-center text-white/70 hover:bg-white/10 hover:text-white transition-all z-41 cursor-pointer"
         aria-label="Previous slide"
       >
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M15 19l-7-7 7-7"
+          />
         </svg>
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-white/40 flex items-center justify-center text-white/70 hover:bg-white/10 hover:text-white transition-all"
+        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-white/40 flex items-center justify-center text-white/70 hover:bg-white/10 hover:text-white transition-all z-41 cursor-pointer"
         aria-label="Next slide"
       >
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
         </svg>
       </button>
 
       {/* Slide indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
-        {Array.from({ length: SLIDE_COUNT }).map((_, i) => (
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+        {HERO_IMAGES.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrentSlide(i)}
